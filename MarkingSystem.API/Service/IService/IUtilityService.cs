@@ -6,5 +6,6 @@ namespace MarkingSystem.API.Service.IService
     {
         Task<IEnumerable<UtilityDto>> GetTeachers();
         Task<IEnumerable<UtilityDto>> GetStudents();
+        Task<IEnumerable<UtilityDto>> GetCurrentStudent();
     }
 }

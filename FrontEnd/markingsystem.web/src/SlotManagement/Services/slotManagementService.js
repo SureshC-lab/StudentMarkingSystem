@@ -44,7 +44,7 @@ export const deleteSlotManagement = async (id) => {
 };
 
 export const getStudents = async () => {
-  const response = await axios.get(`${API_UTILITY}/getStudents`, getAuthHeaders());
+  const response = await axios.get(`${API_UTILITY}/getCurrentStudents`, getAuthHeaders());
   return response.data.result;
 };
 

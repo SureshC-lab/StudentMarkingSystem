@@ -54,5 +54,24 @@ namespace MarkingSystem.API.Controllers
             }
             return _response;
         }
+
+        [HttpGet("getCurrentStudents")]
+        public async Task<object> GetCurrentStudent()
+        {
+            try
+            {
+                IEnumerable<UtilityDto> utilityDtos = await _utilityService.GetCurrentStudent();
+                _response.Result = utilityDtos;
+            }
+            catch (Exception ex)
+            {
+                _response.IsSuccess = false;
+                _response.ErrorMessages = new List<string>()
+            {
+                ex.ToString()
+            };
+            }
+            return _response;
+        }
     }
 }
